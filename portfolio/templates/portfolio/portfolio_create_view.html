@@ -1,0 +1,133 @@
+
+
+
+{% extends 'base.html' %}
+<!--{{ html }}-->
+
+    {% block content %}
+<!--{{ pictures }}-->
+<!--{{ html }}-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" style="font-size: 2em" href="/"
+            >Home</a
+          >
+
+          <a class="nav-item nav-link" style="font-size: 2em" href="/about"
+            >About</a
+          >
+          <a class="nav-item nav-link" style="font-size: 2em" href="/contact"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </nav>
+
+{% load static %}
+<!--    <h2 class="text-center text-primary">Portfolio based on {{ object.stock_name }} stock with a {{ object.risk_level}} risk</h2>-->
+<!--<img src="{% static 'images/portfolio.png' %}">-->
+<!--<img src="{% static 'images/graph.png' %}">-->
+<p style="display: none">{{ obj.stock_name }}</p>
+
+{% for ticker in tickers%}
+    <li style="display: none">{{ ticker }}</li>
+{% endfor%}
+
+  <div class="ml-5" id="container" style="width: 1000px; height: 800px;">
+    <div class="row">
+        <div class="col align-self-center">
+      <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js" type="text/javascript"></script>
+      <center>
+            <script>
+  anychart.onDocumentLoad(function () {
+    // create an instance of a pie chart
+    var chart = anychart.pie();
+    // set the data
+    lis = document.querySelectorAll('li')
+    chart.data([
+      [lis[0].textContent, 5],
+      [lis[1].textContent, 2],
+      [lis[2].textContent, 2],
+      [lis[3].textContent, 2],
+      [lis[4].textContent, 1]
+    ]);
+    // set chart title
+
+    // set the container element
+    chart.container("container");
+    // initiate chart display
+    chart.draw();
+  });
+</script>
+</center>
+
+        </div>
+
+    </div>
+
+  </div>
+
+
+
+<!--    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+<!--      <button-->
+<!--        class="navbar-toggler"-->
+<!--        type="button"-->
+<!--        data-toggle="collapse"-->
+<!--        data-target="#navbarNavAltMarkup"-->
+<!--        aria-controls="navbarNavAltMarkup"-->
+<!--        aria-expanded="false"-->
+<!--        aria-label="Toggle navigation"-->
+<!--      >-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--      </button>-->
+<!--      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
+<!--        <div class="navbar-nav">-->
+<!--          <a class="nav-item nav-link" style="font-size: 2em" href="/"-->
+<!--            >Home</a-->
+<!--          >-->
+
+<!--          <a class="nav-item nav-link" style="font-size: 2em" href="/about"-->
+<!--            >About</a-->
+<!--          >-->
+<!--          <a class="nav-item nav-link" style="font-size: 2em" href="/contact"-->
+<!--            >Blog</a-->
+<!--          >-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </nav>-->
+
+
+<!--    &lt;!&ndash; header section end &ndash;&gt;-->
+<!--    &lt;!&ndash; banner section start &ndash;&gt;-->
+<!--    <div class="layout_padding banner_section">-->
+<!--      <div class="container">-->
+<!--        <div class="row">-->
+<!--          <div class="col-sm-12">-->
+<!--            <h1 class="banner_taital">Earning Financial Freedom</h1>-->
+<!--            <p class="browse_text">-->
+<!--              Do you want to invest but troubled by the fact about which stocks to buy? Come to "Earning Financial Freedom" to get free portfolio recommendations.-->
+<!--            </p>-->
+<!--            <div class="banner_bt">-->
+<!--              <button class="read_bt">Learn More</button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; banner section end &ndash;&gt;-->
+<!--    &lt;!&ndash; search box start &ndash;&gt;-->
+
+{% endblock %}

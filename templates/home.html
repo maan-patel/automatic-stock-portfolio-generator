@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+    <!-- header section start -->
+    {% block content %}
+
+<!--<form action = '.' method = 'POST'> {% csrf_token %}-->
+<!--    {{ form }}-->
+<!--&lt;!&ndash;    {{ form.as_ul }}&ndash;&gt;-->
+<!--    <input type = 'submit' value = 'Save' />-->
+<!--</form>-->
+
+<!--    {{ graph }}-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" style="font-size: 2em" href="/"
+            >Home</a
+          >
+
+          <a class="nav-item nav-link" style="font-size: 2em" href="/about"
+            >About</a
+          >
+          <a class="nav-item nav-link" style="font-size: 2em" href="/contact"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- header section end -->
+    <!-- banner section start -->
+    <div class="layout_padding banner_section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1 class="banner_taital">Earning Financial Freedom</h1>
+            <p class="browse_text">
+              Do you want to invest but troubled by the fact about which stocks to buy? Come to "Earning Financial Freedom" to get free portfolio recommendations.
+            </p>
+            <div class="banner_bt">
+              <button class="read_bt">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- banner section end -->
+    <!-- search box start -->
+    <div class="container">
+      <div class="search_box">
+        <form action = '.' method = 'POST'> {% csrf_token %}
+        <div class="row">
+          {{ form.non_field_errors }}
+          <div class="col-sm-3">
+            <div class="form-group">
+              {{ form.stock_name.errors }}
+
+              {{ form.stock_name }}
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+              {{ form.investment_value.errors }}
+
+              {{ form.investment_value }}
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              {{ form.risk_profile.errors }}
+
+              {{ form.risk_profile }}
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="form-group">
+                {{ form.time.errors }}
+
+                {{ form.time }}
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                {{ form.graph_type.errors }}
+
+                {{ form.graph_type }}
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <input class="search_bt" type="submit" value="Create Portfolio"></input>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- search box end -->
+
+
+    {% endblock %}

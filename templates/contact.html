@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+    <!-- header section start -->
+    {% block content %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" style="font-size: 2em" href="/"
+            >Home</a
+          >
+
+          <a class="nav-item nav-link" style="font-size: 2em" href="/about"
+            >About</a
+          >
+          <a class="nav-item nav-link active" style="font-size: 2em" href="/contact"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- header section end -->
+    <!-- banner section start -->
+    <div class="layout_padding banner_section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1 class="banner_taital">Automatic Stock Portfolio Generator</h1>
+            <p class="browse_text">
+              We aim to plan financial freedom for those struggling through the
+              pandemic and empower women to be financially independent
+            </p>
+            <div class="banner_bt">
+              <button class="read_bt">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ <h3 class="text-center ">
+      Please check out one of our group member's amazing <a href="https://maychen-83671.medium.com/why-are-women-not-investing-e5b2c52ec3e3">
+   <b>Medium article </b></a> about why women are not investing
+    </h3>
+
+  
+    {% endblock %}
