@@ -2,23 +2,25 @@ from django.shortcuts import render
 from .models import Portfolio
 from .forms import PortfolioForm, RawPortfolioForm
 from .models import Portfolio
-from .controller import recommended_tickers
+from .controller import recommended_tickers, recommended_stock_weight, is_valid_ticker
 import mpld3
 
 
 def portfolio_create_view(request, *args, **kwargs):
     obj = Portfolio.objects.latest('id')
-    # context = {
-    #     'title': obj.title,
-    #     'description': obj.description
-    # }
+    valid = is_valid_ticker(obj.stock_name)
+    if not valid:
+        obj.stock_name = 'AAPL'
     tickers = recommended_tickers(obj.stock_name)
-    print(tickers)
+    prices = recommended_stock_weight(obj.stock_name)
+
     context = {
         'obj': obj,
         'tickers': tickers,
+        'prices' : prices,
 
     }
+    print(tickers)
     print(obj.stock_name)
     print(obj.investment_value)
     print(obj.risk_profile)

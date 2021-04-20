@@ -39,12 +39,20 @@
 <!--    <h2 class="text-center text-primary">Portfolio based on {{ object.stock_name }} stock with a {{ object.risk_level}} risk</h2>-->
 <!--<img src="{% static 'images/portfolio.png' %}">-->
 <!--<img src="{% static 'images/graph.png' %}">-->
-<p style="display: none">{{ obj.stock_name }}</p>
+<p id = 'stock' style="display: none">{{ obj.stock_name }}</p>
 
 {% for ticker in tickers%}
     <li style="display: none">{{ ticker }}</li>
 {% endfor%}
 
+<ul>
+{% for prices in prices%}
+    <li>{{ price }}</li>
+{% endfor%}
+
+
+
+</ul>
   <div class="ml-5" id="container" style="width: 1000px; height: 800px;">
     <div class="row">
         <div class="col align-self-center">
@@ -81,53 +89,51 @@
 
 
 
-<!--    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
-<!--      <button-->
-<!--        class="navbar-toggler"-->
-<!--        type="button"-->
-<!--        data-toggle="collapse"-->
-<!--        data-target="#navbarNavAltMarkup"-->
-<!--        aria-controls="navbarNavAltMarkup"-->
-<!--        aria-expanded="false"-->
-<!--        aria-label="Toggle navigation"-->
-<!--      >-->
-<!--        <span class="navbar-toggler-icon"></span>-->
-<!--      </button>-->
-<!--      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
-<!--        <div class="navbar-nav">-->
-<!--          <a class="nav-item nav-link" style="font-size: 2em" href="/"-->
-<!--            >Home</a-->
-<!--          >-->
 
-<!--          <a class="nav-item nav-link" style="font-size: 2em" href="/about"-->
-<!--            >About</a-->
-<!--          >-->
-<!--          <a class="nav-item nav-link" style="font-size: 2em" href="/contact"-->
-<!--            >Blog</a-->
-<!--          >-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </nav>-->
+<script language="javascript" type="text/javascript">
+  let stock_name = document.querySelectorAll('.stock')
+  let links = document.getElementById('dynamicLink')
+  l = links[0]
+  l.innerHTML = `https://www.tradingview.com/symbols/${stock_name}/`
+  return l
+  </script>
+
+<div class="tradingview-widget-container">
+  <div id="tradingview_b0d5f"></div>
+
+  <div class="tradingview-widget-copyright"><a id = "dynamicLink" href='link' rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  let stock_name = document.getElementById('stock').innerHTML
+  console.log(stock_name)
+  new TradingView.widget(
+  {
+  "width": 980,
+  "height": 610,
+  "symbol": stock_name,
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "light",
+  "style": "1",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "allow_symbol_change": true,
+  "container_id": "tradingview_b0d5f"
+}
+  );
+  </script>
+
+</div>
 
 
-<!--    &lt;!&ndash; header section end &ndash;&gt;-->
-<!--    &lt;!&ndash; banner section start &ndash;&gt;-->
-<!--    <div class="layout_padding banner_section">-->
-<!--      <div class="container">-->
-<!--        <div class="row">-->
-<!--          <div class="col-sm-12">-->
-<!--            <h1 class="banner_taital">Earning Financial Freedom</h1>-->
-<!--            <p class="browse_text">-->
-<!--              Do you want to invest but troubled by the fact about which stocks to buy? Come to "Earning Financial Freedom" to get free portfolio recommendations.-->
-<!--            </p>-->
-<!--            <div class="banner_bt">-->
-<!--              <button class="read_bt">Learn More</button>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    &lt;!&ndash; banner section end &ndash;&gt;-->
-<!--    &lt;!&ndash; search box start &ndash;&gt;-->
+
+
+
+
+
+
 
 {% endblock %}
+
+
