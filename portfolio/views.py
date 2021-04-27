@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Portfolio
 from .forms import PortfolioForm, RawPortfolioForm
 from .models import Portfolio
-from .controller import recommended_tickers, recommended_stock_weight, is_valid_ticker
+from .controller import recommended_tickers, recommended_stock_weight, is_valid_ticker, number_of_stocks
 import mpld3
 
 
@@ -18,6 +18,7 @@ def portfolio_create_view(request, *args, **kwargs):
         'obj': obj,
         'tickers': tickers,
         'prices' : prices,
+        
 
     }
     print(tickers)

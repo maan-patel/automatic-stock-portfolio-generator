@@ -3,8 +3,17 @@ import requests
 import datetime as dt
 # import mpld3
 # from mpld3 import plugins
+# import yfinance as yf
+
+# msft = yf.Ticker("MSFT")
 
 
+# def api_call(stock_ticker):
+
+#     stock = yf.Ticker(stock_ticker)
+#     return stock.info['regularMarketPrice']
+
+# print(api_call('AAPL'))
 
 
 def recommended_tickers(stock_ticker):
@@ -15,7 +24,7 @@ def recommended_tickers(stock_ticker):
     querystring_recommender = {"symbol": stock_ticker}
 
     headers_recommender = {
-        'x-rapidapi-key': "1ef84c9bc0msh0ec5f4323cd2733p19e01fjsn40a6d4d91c6e",
+        'x-rapidapi-key': "8a5cdbe10amshda1071659c3e749p104baajsn3f2f59f21a3a",
         'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
     }
 
@@ -44,7 +53,7 @@ def recommended_stock_weight(stock_ticker):
     querystring_recommender = {"symbol": stock_ticker}
 
     headers_recommender = {
-        'x-rapidapi-key': "1ef84c9bc0msh0ec5f4323cd2733p19e01fjsn40a6d4d91c6e",
+        'x-rapidapi-key': "8a5cdbe10amshda1071659c3e749p104baajsn3f2f59f21a3a",
         'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
     }
 
@@ -70,7 +79,7 @@ def is_valid_ticker(stock_ticker):
     querystring = {"region": "US", "symbols": stock_ticker}
 
     headers = {
-        'x-rapidapi-key': "1ef84c9bc0msh0ec5f4323cd2733p19e01fjsn40a6d4d91c6e",
+        'x-rapidapi-key': "8a5cdbe10amshda1071659c3e749p104baajsn3f2f59f21a3a",
         'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
     }
 
@@ -82,7 +91,28 @@ def is_valid_ticker(stock_ticker):
         return False
     return True
 
-# print(recommended_stock_weight('AAPL'))
+
+def number_of_stocks(stock_ticker, investment_value):
+    prices = recommended_stock_weight(stock_ticker)
+    split_investment = investment_value // 5
+    stock_investory = []
+
+    total_price = investment_value
+
+    for price in prices:
+        if price > split_investment:
+            stock_investory.append(0)
+            total_price -= 0
+        else:
+            stock_investory.append(int(split_investment // price))
+            total_price -= price * int(split_investment // price)
+
+
+    return [stock_investory, int(total_price)]
+        
+    
+
+print(number_of_stocks('AAPL', 1000))
 
 
 
