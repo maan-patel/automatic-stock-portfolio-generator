@@ -1,12 +1,63 @@
 
-
-
 {% extends 'base.html' %}
 <!--{{ html }}-->
 
     {% block content %}
 <!--{{ pictures }}-->
 <!--{{ html }}-->
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "Nasdaq 100"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR/USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "BTC/USD"
+    },
+    {
+      "description": "TSLA",
+      "proName": "NASDAQ:TSLA"
+    },
+    {
+      "description": "AAPL",
+      "proName": "NASDAQ:AAPL"
+    },
+    {
+      "description": "QQQ",
+      "proName": "NASDAQ:QQQ"
+    },
+    {
+      "description": "FB",
+      "proName": "NASDAQ:FB"
+    },
+    {
+      "description": "GOOG",
+      "proName": "NASDAQ:GOOG"
+    }
+  ],
+  "showSymbolLogo": true,
+  "colorTheme": "dark",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <button
         class="navbar-toggler"
@@ -21,15 +72,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" style="font-size: 2em" href="/"
+          <a class="nav-item nav-link" style="font-size: 1.5em" href="/"
             >Home</a
           >
 
-          <a class="nav-item nav-link" style="font-size: 2em" href="/about"
+          <a class="nav-item nav-link" style="font-size: 1.5em" href="/about"
             >About</a
           >
-          <a class="nav-item nav-link" style="font-size: 2em" href="/contact"
-            >Blog</a
+          <a class="nav-item nav-link" style="font-size: 1.5em" href="/contact"
+            >Contact</a
           >
         </div>
       </div>
@@ -124,11 +175,29 @@
   );
   </script>
 
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/financials-overview/" rel="noopener" target="_blank"><span class="blue-text">AAPL Fundamental Data</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
+  let stock_name = document.getElementById('stock').innerHTML
+  {
+  "symbol": stock_name,
+  "colorTheme": "light",
+  "isTransparent": false,
+  "largeChartUrl": "",
+  "displayMode": "regular",
+  "width": 480,
+  "height": 830,
+  "locale": "en"
+}
+  </script>
 </div>
+<!-- TradingView Widget END -->
+  
 
-
-
-
+</div>
 
 
 

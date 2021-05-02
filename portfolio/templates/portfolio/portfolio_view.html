@@ -1,7 +1,58 @@
 {% extends 'base.html' %}
     <!-- header section start -->
     {% block content %}
-
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "Nasdaq 100"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR/USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "BTC/USD"
+    },
+    {
+      "description": "TSLA",
+      "proName": "NASDAQ:TSLA"
+    },
+    {
+      "description": "AAPL",
+      "proName": "NASDAQ:AAPL"
+    },
+    {
+      "description": "QQQ",
+      "proName": "NASDAQ:QQQ"
+    },
+    {
+      "description": "FB",
+      "proName": "NASDAQ:FB"
+    },
+    {
+      "description": "GOOG",
+      "proName": "NASDAQ:GOOG"
+    }
+  ],
+  "showSymbolLogo": true,
+  "colorTheme": "dark",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
 <!--<form action = '.' method = 'POST'> {% csrf_token %}-->
 <!--    {{ form }}-->
 <!--&lt;!&ndash;    {{ form.as_ul }}&ndash;&gt;-->
@@ -24,15 +75,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" style="font-size: 2em" href="/"
+          <a class="nav-item nav-link active" style="font-size: 1.5em" href="/"
             >Home</a
           >
 
-          <a class="nav-item nav-link" style="font-size: 2em" href="/about"
+          <a class="nav-item nav-link" style="font-size: 1.5em" href="/about"
             >About</a
           >
-          <a class="nav-item nav-link" style="font-size: 2em" href="/contact"
-            >Blog</a
+          <a class="nav-item nav-link" style="font-size: 1.5em" href="/contact"
+            >Contact</a
           >
         </div>
       </div>

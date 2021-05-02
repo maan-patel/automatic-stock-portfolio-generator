@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
     <!-- header section start -->
     {% block content %}
+    <style>
+      body {
+  background-color: #d9ed92;
+}
+
+h2{
+  font-size: xx-large;
+}
+    </style>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <button
         class="navbar-toggler"
@@ -15,38 +24,345 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" style="font-size: 2em" href="/"
+          <a class="nav-item nav-link" style="font-size: 1.5em" href="/"
             >Home</a
           >
 
-          <a class="nav-item nav-link active" style="font-size: 2em" href="/about"
+          <a class="nav-item nav-link active" style="font-size: 1.5em" href="/about"
             >About</a
           >
-          <a class="nav-item nav-link" style="font-size: 2em" href="/contact"
-            >Blog</a
+          <a class="nav-item nav-link" style="font-size: 1.5em" href="/contact"
+            >Contact</a
           >
         </div>
       </div>
     </nav>
 
-    <!-- header section end -->
-    <!-- banner section start -->
-    <div class="layout_padding banner_section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <h1 class="banner_taital">Automatic Stock Portfolio Generator</h1>
-            <p class="browse_text">
-              We aim to plan financial freedom for those struggling through the
-              pandemic and provide free information about getting started with the Stock Market
-            </p>
-            <div class="banner_bt">
-              <button class="read_bt"><a href='/contact/' alt='Broken Link'>Learn More</a></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <center>
+    <h1  >Investing 101</h1>
 
+    
+    <h2  >Welcome to the world of Investing!</h2>
+        </center>
+        <div class="container">
+          <div class="row">
+            <h2>What is Investing? </h2>
+    <p>
+
+Investing involves committing money in order to earn a financial return. This essentially means that you invest money to make money and achieve your financial goals.
+<br><br>
+That is the super concise investing definition that comes courtesy of Merriam-Webster. Regardless of where you invest your money, you're essentially giving your money to a company, government, or other entity in the hope they provide you with more money in the future. People generally invest money with a specific goal in mind, for example, retirement, their children's education, a house — the list goes on.
+<br><br>
+Investing is different from saving or trading. Generally investing is associated with putting money away for a long period of time rather than trading stocks on a more regular basis. Investing is riskier than saving money. Savings are sometimes guaranteed but investments are not. If you were to keep your money under the mattress and not invest — you'd never have more money than what you've put away yourself.
+<br><br>
+The list below shows the types of investments
+</p>
+
+
+<div class="col align-self-center">
+  <table class="table table-dark table-striped">
+    
+    <thead>
+      <tr>
+        <th scope="col">What it is</th>
+        <th scope="col">How to invest</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Bonds</th>
+        <td>A loan (kind of like an IOU) with interest. They are often issued by governments. Interest rates normally exceed the interest rate of banks however you do assume more risk than a standard savings account. You have all your eggs in one basket if you only invest in bonds.	They can be purchased directly through the government, or a brokerage or trading platform. They are often included in managed portfolios too.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stocks</th>
+        <td>A tiny piece of a company that anyone can buy. Stocks are volitile and while you could make a lot you could also lose a lot. When you pick individual stocks you lack diversification.	Through a broker or automated investing platform. Stocks are oftern a large part of managed portfolios.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Real Estate</th>
+        <td>Involves purchasing real estate such as apartments or houses. There can be a high barrier to entry as property is expensive. Real Estate Trusts allow you to invest in a sliver of property.	Directly from a property owner. Real Estate Investment Trusts can be purchased through a broker. Managed portfolios often contain some real estate.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Automated Investing</th>
+        <td>The hands-free approach to investing. Automated investing allows you to invest in a broad section of the market. It's advantagious as it comes with diversification and low account minimums.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">ETFs</th>
+        <td>An ETF is a collection of stocks or bonds that may be purchased for one price. Unlike mutual funds, ETFs may be bought and sold during the entire trading day just like a stocks on an exchange. Many popular ETFs track well-known stock indexes like the S&P 500.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Mutual Funds</th>
+        <td>A mutual fund is a type of financial vehicle made up of a pool of money collected from many investors to invest in securities like stocks, bonds, money market instruments, and other assets.</td>
+      </tr>
+      <tr>
+        <th scope="row">REITs</th>
+        <td>Real estate investment trusts are companies that own or finance income-producing real estate across a range of property sectors. These real estate companies have to meet a number of requirements to qualify as REITs. Most REITs trade on major stock exchanges, and they offer a number of benefits to investors.</td>
+      </tr>
+      <tr>
+        <th scope="row">Commodities</th>
+        <td>A commodity is a basic good used in commerce that is interchangeable with other goods of the same type. Commodities are most often used as inputs in the production of other goods or services. The quality of a given commodity may differ slightly, but it is essentially uniform across producers.</td>    
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+<!-- <div class="col align-self-center">
+  <table class="table table-dark table-striped">
+    
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Types of Investments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Stocks</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Bonds</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>ETFs</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Mutual funds</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Cash equivalents</td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>Real estate</td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>REITs</td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>Commodities</td>
+      </tr>
+    </tbody>
+  </table>
+  </div> -->
+
+
+<p>
+Before you start to invest, it is important to first understand if investing is a good idea for you. 
+<br><br>
+1. Do you have a lot of credit card debt?
+<br>
+If the answer is <b>yes</b>, you’re probably not in a position to invest quite yet. First, do everything you can do to erase that debt, because no investment you’ll find will consistently outperform the 14% or so APR that you’re likely forking over to a credit card company to service your debt. Here’s a good place to start plotting your debt’s annihilation.
+<br><br>
+2. Do you have an emergency fund?
+<br>
+Layoffs, natural disasters, sicknesses are all situations where you need you funds. If you still have money left after these funds are set aside, you can proceed further with investing.  
+
+</p>
+<h2>Investing Tips</h2>
+<p>
+Investing is what happens when at the end of the month, after the bills are paid, you’ve got a few dollars left over to put towards your future. No investing happens without putting money away. How are you supposed to find those elusive extra dollars to save? Here’s how.
+<br>
+Avoid lifestyle creep
+
+In all likelihood, you’ll earn more in your thirties than you did in your twenties, and even more than that in your forties. The key to saving is to do your absolute best to avoid what’s called “lifestyle creep”. If you haven't heard of this before, let us explain.
+<br>
+Lifestyle creep means that as you make more money, what once seemed like luxuries become necessities. 
+Start investing — even a little at a time
+<br><br>
+Once you’ve got savings, you’ll absolutely want to invest. Inflation will almost always outpace the interest rate that you’ll be able to get on a savings account. You’ll be effectively be saving and losing money at the same time. This is why you should start investing as soon as you can.
+<br>
+Investing is not just for the Warren Buffet's of the world. If you are finding it tough to put away some investing money each month, try using a spare change app. These services round-up your purchases, allowing you to invest small amounts of money that you'd hardly miss. For example, if you spent $3.39 on a coffee then $0.61 would be invested.
+<br><br>
+Investing small amounts of money is a great habit to get into and your money will add up over time. If you're looking for more easy ways to invest with little money, here they are.
+
+
+<div class="col align-self-center">
+  <table class="table table-dark table-striped">
+    
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">How can You Invest with Little Money?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Invest quarters at a time using a spare change app</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Set up small, monthly transfers from your checking account</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Use a low-cost investing service</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Brew your own coffee, invest your Starbucks money</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Immediately invest any tax returns</td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>Invest any raises instead of altering your lifestyle</td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>Ask relatives for investing money, rather than other gifts</td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>Know what you're investing for</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+
+
+  <br>
+<p>
+How you invest depends on what exactly you're investing for. 
+
+You might invest to pay off your college tuitions or invest to pay for your retirement. 
+<br>
+Those with shorter horizons should invest more conservatively. Those investing money they don't need for a long time can choose riskier investments.
+<br>
+You need to determine your investment reason and consider your risks.
+<br><br>
+Before deciding where to invest, you’ll need to first assess your personal risk tolerance. This is a fancy way of saying how much of your investment you can really afford to lose.
+ <br>
+
+If you need money for next month’s rent, you have a very low-risk tolerance.
+<br>
+If your life wouldn’t be materially affected in any way, if rather than investing money, you set fire to it, your risk tolerance is through the roof. Risk tolerance is often dictated by your “time horizon”. This may sound like something you’d hear on the bridge of the Starship Enterprise, but instead, it's just a term that means the length of time you’ll hold a particular investment.
+<br>
+</p>
+
+<h2>Diversify your investments</h2>
+<p>
+  <br>
+Rather than zero-in on some stock you think will perform well, diversify your investments.
+<br> In doing this, if one part of your investment doesn't do well you haven't lost everything. 
+<br>
+A potentially bigger risk is how you react to the fluctuations. Many investors find it difficult to stick to their investing plan—particularly during market movements. A diversified portfolio that's prone to less market movements can come in useful to help manage your emotions.
+<br>
+If all this portfolio diversification talk sounds like hard work — that's because it is. Automated investing is a good alternative for someone who wants to diversify their portfolio but doesn't want to go to the effort of buying multiple assets such as stocks, bonds and real estate by themselves.
+
+<br>
+</p>
+<h2>Invest for the long-term</h2>
+<p>
+<br>
+Many studies demonstrate that investors who hold onto stocks for more than 10 years will be rewarded with higher returns that offset short-term risks. 
+<br>
+That's not to say this trend will continue, or that risk is ever totally eliminated. Risk never disappears, but you might say it mellows with age.
+
+<br>
+If you can put money away for a long time period, then you can afford to have investments that are typically more susceptible to rising and falling. Your portfolio can contain a mix of stocks and equities that are typically more volatile compared to bonds.
+<br><br>
+Regardless of how long you're investing for, diversifying your portfolio is an absolute must. One thing is also for sure — if you invest for a long time period you benefit from the power of compounding. This is the process by which the money you make earns interest on itself over time. The earlier you start investing, the more you benefit from compounding over time.
+<br>
+
+
+</p>
+<h2>Don't pay too much fees</h2>
+
+<br>
+<p>
+Trading is not free! There are many fees such as conversion, buying, selling, etc. 
+<br>
+Please do reasearch about the best trading platforms (a trading platform is a company/bank that allows you to buy and sell stocks, bonds, etc!) available in your country. Please see the link below for fees in Canada
+
+https://youngandthrifty.ca/the-ultimate-guide-to-canadas-discount-brokerages/
+<br>
+
+The last thing you want to do is overpay fees. If you are paying 1-2% in fees, you could lose up to 40% of your expected investment returns over time. Because fees are so consequential, you should make sure that you aren't overpaying for the service you are getting.
+<br>
+</p>
+<h2>Consider how much time you can put into investing</h2>
+
+<p>
+Managing your investments can take a little time or a long time. Before you invest a dollar consider how much time you can put into managing your investments.
+
+<br>
+A DIY approach will require making regular trades and ensuring sure your investments stay on track (re-balancing). A robo-advisor (automated investing) will cost a little more than doing things yourself but it won't be as time-intensive. The platform manages your investments saving you time.
+<br>
+
+</p>
+<h2>Risk vs. reward</h2>
+<p>
+The stock market is premised on the fact that investors will only invest if they’re compensated for taking the risk of buying stock. 
+Think about it. Nobody would invest in any stock that they expected to rise 1.5% annually. 
+<br>
+You could potentially get the same or better returns from something like a smart savings investment account to any number of other investments that don’t carry as much risk as stocks do. 
+
+<br><br>They’d be insane to take more risk in order to collect an identical return.
+
+One way of looking at the risk vs. reward tradeoff is through a concept known as the “equity risk premium” (ERP). This is an estimate of the expected return you gain from stocks. 
+<br><br>The percentage you can expect to earn on a stock over the so-called “risk-free rate,” the current interest rate you could get by putting your money in almost zero-risk government bonds. Without the potential for robust gains, all stocks would head straight to the basement.
+
+<br>
+
+</p>
+<h2>Stock picking</h2>
+
+<p>
+You’d be mistaken if you thought that picking one stock is the way to benefit from this phenomenon. Warren Buffett, who will probably be remembered in history books as the world’s best stock picker, consistently advises anyone who’ll listen not to try to pick individual stocks, but rather diversify in order to benefit from the growth of the broader market. Once quoth Buffett, the Omaha oracle:
+<br><br>
+"The goal of the non-professional should not be to pick winners — neither he nor his 'helpers' can do that — but should rather be to own a cross-section of businesses that in aggregate are bound to do well." <br> - <b>Warren Buffet</b>
+
+<br><br>
+Why probably won't you win picking stocks? You may be very smart, but when you buy a stock at a particular price, you’re buying it from someone who also may be very smart and has access to all the same information that you do. You're betting it goes up while she’s betting it goes down. Are you really so sure you’re smarter than she is? <br>
+Stock picking is exceedingly difficult and those who do it should be prepared to lose a big percentage of their investment.
+<br>
+
+
+</p>
+<h2>Real Estate Investing Basics</h2>
+
+<p>
+
+Those who buy property hoping to get rich quick should understand the dangers.
+<br>
+Real estate is a business that comes with huge, expensive complications, ones that can potentially ruin unsavvy speculators. Any back of the envelope calculation of investment return must take into account expenses such as property taxes, insurance, and maintenance.
+<br><br>
+Those seeking diversification in their portfolio in addition to stocks and bonds can invest in real estate without any of the headaches that come with actually owning a house or apartment. Real estate investment trusts, or REITs, are companies that sell shares in their various real estate investments. Just as diversification is important in stock holdings, REIT investors can spread their risk among dozens — or even hundreds — of REITs through REIT ETFs, of which there are literally hundreds to choose from. REITs also offer some major tax benefits that neither home ownership, nor investments in stocks or bonds, offer.
+
+</p>
+
+<h2>Make an investing plan and stick to it</h2>
+<p>
+One of the biggest reasons many investors have low returns is because they sell at the wrong time. 
+<br>They often base decisions on recent performance. They look at what has been doing well or not so well recently.
+ Many investors tend to buy things that have appreciated in value and sell things that have declined in value.
+ <br>
+
+ <br>
+Rather than do this, you should create a plan you will think will help you reach your goals over the time period you have to invest. 
+<br>Don't stop investing because of bad performance. 
+<br>Stick to your plan without buying or selling based on your opinion of what will happen in the near future.
+
+</p>
+</p>
+
+
+  </div>
+</div>
 
     {% endblock %}

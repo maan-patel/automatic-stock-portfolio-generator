@@ -110,9 +110,16 @@ def number_of_stocks(stock_ticker, investment_value):
 
     return [stock_investory, int(total_price)]
         
+def is_number_of_stocks(stock_ticker, investment_value):
+    investment_arr = number_of_stocks(stock_ticker, investment_value)
+    for i in investment_arr[0]:
+        if i == 0:
+            return False
     
+    return True
 
-print(number_of_stocks('AAPL', 1000))
+
+# print(is_number_of_stocks('AAPL', 1000))
 
 
 
