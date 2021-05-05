@@ -119,6 +119,21 @@ def is_number_of_stocks(stock_ticker, investment_value):
     return True
 
 
+def is_valid_graph(graph):
+    graph_types = ['line', 'candle', 'bar']
+    for i in graph_types:
+        if i.lower() == graph.lower():
+            return True
+    return False
+
+def number_for_graph(graph):
+    graph_types = ['Candle', 'Line', 'Bar']
+    for i, val in enumerate(graph_types):
+        if graph.lower() == val.lower():
+            return i + 1
+    return 1
+    
+
 # print(is_number_of_stocks('AAPL', 1000))
 
 
