@@ -15,6 +15,8 @@ import datetime as dt
 
 # print(api_call('AAPL'))
 
+# 8a5cdbe10amshda1071659c3e749p104baajsn3f2f59f21a3a
+# 3b5eefa820msha0498f1c4c42783p194c3cjsnb6c5e4bc24a3
 
 def recommended_tickers(stock_ticker):
 
@@ -24,7 +26,7 @@ def recommended_tickers(stock_ticker):
     querystring_recommender = {"symbol": stock_ticker}
 
     headers_recommender = {
-        'x-rapidapi-key': "8a5cdbe10amshda1071659c3e749p104baajsn3f2f59f21a3a",
+        'x-rapidapi-key': "3b5eefa820msha0498f1c4c42783p194c3cjsnb6c5e4bc24a3",
         'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
     }
 
@@ -53,7 +55,7 @@ def recommended_stock_weight(stock_ticker):
     querystring_recommender = {"symbol": stock_ticker}
 
     headers_recommender = {
-        'x-rapidapi-key': "8a5cdbe10amshda1071659c3e749p104baajsn3f2f59f21a3a",
+        'x-rapidapi-key': "3b5eefa820msha0498f1c4c42783p194c3cjsnb6c5e4bc24a3",
         'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
     }
 
@@ -79,7 +81,7 @@ def is_valid_ticker(stock_ticker):
     querystring = {"region": "US", "symbols": stock_ticker}
 
     headers = {
-        'x-rapidapi-key': "8a5cdbe10amshda1071659c3e749p104baajsn3f2f59f21a3a",
+        'x-rapidapi-key': "3b5eefa820msha0498f1c4c42783p194c3cjsnb6c5e4bc24a3",
         'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
     }
 
