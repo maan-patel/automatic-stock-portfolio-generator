@@ -5,12 +5,6 @@
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
-/*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
- 2) font-family: 'Poppins', sans-serif;
- ----------------------------------------*****/
-
-/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
-
 @import url(animate.min.css);
 @import url(normalize.css);
 @import url(meanmenu.css);
@@ -21,7 +15,7 @@
 @import url(jquery-ui.css);
 @import url(nice-select.css);
 
-/*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
+
 
 * {
   box-sizing: border-box !important;
@@ -352,22 +346,6 @@ nav.main-menu {
   color: #000;
 }
 
-.popular_section {
-  width: 100%;
-  float: left;
-}
-
-.popular_taital {
-  width: 100%;
-  float: left;
-  font-size: 44pt;
-  color: #000000;
-}
-
-.popular_section_2 {
-  width: 100%;
-  float: left;
-}
 
 .slider_img {
   width: 100%;
@@ -649,4 +627,135 @@ nav.main-menu {
 }
 .copyright_text a:hover {
   color: #000000;
+}
+
+.popout {
+  font-family: Futura, sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  padding: 30px;
+}
+@keyframes ani {
+  0% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightgreen;
+    color: black;
+ }
+  30% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightgreen;
+    color: black;
+ }
+  70% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightgreen;
+    color: black;
+ }
+  100% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightgreen;
+    color: black;
+ }
+}
+.popout span {
+  position: relative;
+  display: inline-block;
+  animation: ani 5s infinite alternate cubic-bezier(0.86, 0, 0.07, 1);
+}
+.popout span:nth-last-child(1n) {
+  animation-delay: -0.8333333333s;
+}
+.popout span:nth-last-child(2n) {
+  animation-delay: -1.6666666667s;
+}
+.popout span:nth-last-child(3n) {
+  animation-delay: -2.5s;
+}
+
+
+.investingone {
+  font-family: Futura, sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  padding: 30px;
+}
+@keyframes ani {
+  0% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightgreen;
+    color: black;
+ }
+  30% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightgreen;
+    color: black;
+ }
+  70% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightgreen;
+    color: black;
+ }
+  100% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightgreen;
+    color: black;
+ }
+}
+.investingone span {
+  position: relative;
+  display: inline-block;
+  animation: ani 5s infinite alternate cubic-bezier(0.86, 0, 0.07, 1);
+}
+.investingone span:nth-last-child(1n) {
+  animation-delay: -0.8333333333s;
+}
+.investingone span:nth-last-child(2n) {
+  animation-delay: -1.6666666667s;
+}
+.investingone span:nth-last-child(3n) {
+  animation-delay: -2.5s;
+}
+
+
+.investingtwo {
+  font-family: Futura, sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  padding: 10px;
+}
+@keyframes ani {
+  0% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightgreen;
+    color: black;
+ }
+  30% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightgreen;
+    color: black;
+ }
+  70% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightgreen;
+    color: black;
+ }
+  100% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightgreen;
+    color: black;
+ }
+}
+.investingtwo span {
+  position: relative;
+  display: inline-block;
+  animation: ani 5s infinite alternate cubic-bezier(0.86, 0, 0.07, 1);
+}
+.investingtwo span:nth-last-child(1n) {
+  animation-delay: -0.8333333333s;
+}
+.investingtwo span:nth-last-child(2n) {
+  animation-delay: -1.6666666667s;
+}
+.investingtwo span:nth-last-child(3n) {
+  animation-delay: -2.5s;
 }

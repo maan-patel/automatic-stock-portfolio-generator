@@ -17,7 +17,9 @@ import datetime as dt
 
 # 8a5cdbe10amshda1071659c3e749p104baajsn3f2f59f21a3a
 # 3b5eefa820msha0498f1c4c42783p194c3cjsnb6c5e4bc24a3
+# 1ef84c9bc0msh0ec5f4323cd2733p19e01fjsn40a6d4d91c6e
 
+ 
 def recommended_tickers(stock_ticker):
 
 

@@ -34,14 +34,16 @@
     
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/contact_style.css' %}">
-
+    
     <section class="ftco-section">
+      <p class="popout" style="text-align: center;" >
+
+        <span>Contact Us</span>
+      
+        
+        </p>
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-6 text-center mb-5">
-            <h2 class="heading-section">Contact Us</h2>
-          </div>
-        </div>
+        
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="wrapper">
@@ -53,7 +55,8 @@
                     <div id="form-message-success" class="mb-4">
                       Your message was sent, thank you!
                     </div>
-                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                    {% load static %}
+                    <form action = "." method="POST" id="contactForm" name="contactForm" class="contactForm">
                       <div class="row">
                         <div class="col-md-12">
                           <div class="form-group">
