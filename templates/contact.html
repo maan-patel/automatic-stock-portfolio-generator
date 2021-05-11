@@ -56,31 +56,34 @@
                       Your message was sent, thank you!
                     </div>
                     {% load static %}
-                    <form action = "." method="POST" id="contactForm" name="contactForm" class="contactForm">
+                    <form id="my-form" action="https://formspree.io/f/xgeraezw" method="POST" class="contactForm">
+                      
                       <div class="row">
                         <div class="col-md-12">
                           <div class="form-group">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                            <input type="text" class="form-control" name="name" id="full-name" placeholder="Name">
                           </div>
                         </div>
                         <div class="col-md-12"> 
                           <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                            <input type="email" class="form-control" name="_replyto" id="email-address"  placeholder="Email">
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                            <input type="text" class="form-control" name="_subject" id="email-subject"  placeholder="Subject">
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">
-                            <textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Message"></textarea>
+                            <textarea name="message" class="form-control" name="message" id="message" cols="30" rows="6" placeholder="Message"></textarea>
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">
                             <input type="submit" value="Send Message" class="btn btn-success">
+                            <br>
+                            <p style = "color: green;" class = 'message-form' id = 'my-form-status'></p>
                             <div class="submitting"></div>
                           </div>
                         </div>
@@ -130,7 +133,28 @@
         </div>
       </div>
     </section>
-  
+    <script>
+      var form = document.getElementById("my-form");
+      
+      async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("my-form-status");
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: {
+              'Accept': 'application/json'
+          }
+        }).then(response => {
+          status.innerHTML = "Thank you for your submission!";
+          form.reset()
+        }).catch(error => {
+          status.innerHTML = "Oops! There was a problem submitting your form"
+        });
+      }
+      form.addEventListener("submit", handleSubmit)
+  </script>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/popper.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
