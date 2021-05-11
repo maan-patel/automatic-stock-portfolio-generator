@@ -1,4 +1,4 @@
 .env
-fig.html
-Procfile
-API.py
+.fig.html
+.Procfile
+.API.py
