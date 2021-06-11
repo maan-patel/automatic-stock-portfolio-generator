@@ -1,6 +1,10 @@
 import requests
 # import mplfinance as mpf
 import datetime as dt
+# import requests
+import urllib3
+from decouple import config
+from expertai.nlapi.cloud.client import ExpertAiClient
 # import mpld3
 # from mpld3 import plugins
 # import yfinance as yf
@@ -137,6 +141,52 @@ def number_for_graph(graph):
             return i + 1
     return 1
     
+
+
+def sentiment_score(stock_ticker):
+    url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/conversations/list"
+    querystring = {"symbol":f"{stock_ticker}","messageBoardId":"finmb_24937","region":"US","userActivity":"true","sortBy":"createdAt","off":"0"}
+    headers = {
+        'x-rapidapi-key': "8a5cdbe10amshda1071659c3e749p104baajsn3f2f59f21a3a",
+        'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
+        }
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    data = response.json()
+    # print(data)
+    # print(data["canvassMessages"][0]["details"]["userText"])
+    data_for_comments = data["canvassMessages"]
+    EAI_USERNAME = config('EAI_USERNAME')
+    EAI_PASSWORD = config('EAI_PASSWORD')
+    import os
+    os.environ["EAI_USERNAME"] = EAI_USERNAME
+    os.environ["EAI_PASSWORD"] = EAI_PASSWORD
+    
+    client = ExpertAiClient()
+    sum = 0
+    count = 0
+    for i in range(5):
+        text = data_for_comments[i]["details"]["userText"]
+        language= 'en'
+        # print(text)
+        output = client.specific_resource_analysis(
+            body={"document": {"text": text}}, 
+            params={'language': language, 'resource': 'sentiment'
+        })
+        print(output.sentiment.overall)
+        print(text)
+        sum += output.sentiment.overall
+        count += 1
+    
+    average = 0.0
+    average = sum / count
+    return average
+
+
+
+
+
+# Testing for functions 
+# print(sentiment_score(data_for_comments))
 
 # print(is_number_of_stocks('AAPL', 1000))
 

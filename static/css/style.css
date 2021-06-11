@@ -759,3 +759,35 @@ nav.main-menu {
 .investingtwo span:nth-last-child(3n) {
   animation-delay: -2.5s;
 }
+
+
+@import "compass/css3";
+.wrapper {
+	text-align: center;
+}
+.legend {
+	display: inline-block;
+	width: 400px;
+	vertical-align: text-bottom;
+	margin-left: 1px;
+	background-color: white;
+}
+.legend span {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin: 0 10px 0 20px;
+}
+.legend span.green {
+	background-color: #30b32d;
+}
+.legend span.yellow {
+	background-color: #fd0;
+}
+.legend span.orange {
+	background-color: #ffa500;
+}
+.legend span.red {
+	background-color: #f03e3e;
+}
+ 
