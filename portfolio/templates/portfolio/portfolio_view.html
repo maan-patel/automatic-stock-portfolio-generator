@@ -111,7 +111,7 @@
     <!-- search box start -->
     <div class="container">
       <div class="search_box">
-        <form action = '.' method = 'post'> {% csrf_token %}
+        <form method = 'post'> {% csrf_token %}
         <div class="row">
           {{ form.non_field_errors }}
           <div class="col-sm-3">
@@ -161,7 +161,7 @@
               <br>
               <br>
 
-                <center><a href='/portfolio/' class="search_bt mt-2" alt='Broken Link' value = 'Show Portfolio'>Show Portfolio</a></center>
+                <!-- <center><a href='/portfolio/' class="search_bt mt-2" alt='Broken Link' value = 'Show Portfolio'>Show Portfolio</a></center> -->
 
             </div>
             <p class="text-center">Please note that an automatic portfolio will be recommended if you do not enter valid information</p>

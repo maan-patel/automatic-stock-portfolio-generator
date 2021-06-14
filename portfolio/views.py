@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Portfolio
 from .forms import PortfolioForm, RawPortfolioForm
 from .models import Portfolio
@@ -56,6 +56,7 @@ def portfolio_view(request, *args, **kwargs):
         if my_form.is_valid():
             print(my_form.cleaned_data)
             Portfolio.objects.create(**my_form.cleaned_data)
+            return redirect('/portfolio/')
         else:
             print(my_form.error)
 
