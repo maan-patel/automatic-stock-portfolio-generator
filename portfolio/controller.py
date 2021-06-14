@@ -172,8 +172,8 @@ def sentiment_score(stock_ticker):
             body={"document": {"text": text}}, 
             params={'language': language, 'resource': 'sentiment'
         })
-        print(output.sentiment.overall)
-        print(text)
+        # print(output.sentiment.overall)
+        # print(text)
         sum += output.sentiment.overall
         count += 1
     
@@ -183,6 +183,22 @@ def sentiment_score(stock_ticker):
 
 
 
+def search_drop_down(search_query):
+    import json
+    import requests
+
+    url = f"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query={search_query}&region=1&lang=en&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
+
+    response = requests.get(url).text[39:-2]
+    s = str(response)
+    res = json.loads(s)
+    data = res["ResultSet"]["Result"]
+    result = []
+    for i in range(len(data)):
+        ticker = data[i]["symbol"]
+        name = data[i]["name"]
+        result.append(f'{ticker.upper()} - {name}')
+    return result
 
 
 # Testing for functions 

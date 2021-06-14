@@ -791,3 +791,29 @@ nav.main-menu {
 	background-color: #f03e3e;
 }
  
+/* 
+
+@media screen and (min-width:761px) {
+  div, body {
+    min-width: 761px;
+  }
+   
+}
+
+@media screen and (max-width:760px) {
+  div, body {
+    min-width: 760px;
+  }
+}
+
+@media screen and (max-width:480px) {
+  div, body {
+    min-width: 480px;
+  }
+}
+
+@media screen and (max-width:360px) {
+  div, body {
+    min-width: 360px;
+  }
+} */
