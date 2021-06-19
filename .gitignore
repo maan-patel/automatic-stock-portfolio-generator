@@ -2,3 +2,5 @@
 .fig.html
 .Procfile
 .API.py
+.runtime.txt
+.run.gunicorn

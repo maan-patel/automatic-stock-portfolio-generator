@@ -673,6 +673,93 @@ nav.main-menu {
 }
 
 
+.popout1 {
+  font-family: Futura, sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  padding: 30px;
+}
+@keyframes ani {
+  0% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightgreen;
+    color: black;
+ }
+  30% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightgreen;
+    color: black;
+ }
+  70% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightgreen;
+    color: black;
+ }
+  100% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightgreen;
+    color: black;
+ }
+}
+.popout1 span {
+  position: relative;
+  display: inline-block;
+  animation: ani 5s infinite alternate cubic-bezier(0.86, 0, 0.07, 1);
+}
+.popout1 span:nth-last-child(1n) {
+  animation-delay: -0.8333333333s;
+}
+.popout1 span:nth-last-child(2n) {
+  animation-delay: -1.6666666667s;
+}
+.popout1 span:nth-last-child(3n) {
+  animation-delay: -2.5s;
+}
+
+
+.popout2 {
+  font-family: Futura, sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  padding: 30px;
+}
+@keyframes ani {
+  0% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightgreen;
+    color: black;
+ }
+  30% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightgreen;
+    color: black;
+ }
+  70% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightgreen;
+    color: black;
+ }
+  100% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightgreen;
+    color: black;
+ }
+}
+.popout2 span {
+  position: relative;
+  display: inline-block;
+  animation: ani 5s infinite alternate cubic-bezier(0.86, 0, 0.07, 1);
+}
+.popout2 span:nth-last-child(1n) {
+  animation-delay: -0.8333333333s;
+}
+.popout2 span:nth-last-child(2n) {
+  animation-delay: -1.6666666667s;
+}
+.popout2 span:nth-last-child(3n) {
+  animation-delay: -2.5s;
+}
+
 .investingone {
   font-family: Futura, sans-serif;
   font-weight: 900;
@@ -791,6 +878,36 @@ nav.main-menu {
 	background-color: #f03e3e;
 }
  
+
+@import "compass/css3";
+.wrapper1 {
+	text-align: center;
+}
+.legend1 {
+	display: inline-block;
+	width: 400px;
+	vertical-align: text-bottom;
+	margin-left: 1px;
+	background-color: white;
+}
+.legend1 span {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin: 0 10px 0 20px;
+}
+.legend1 span.green {
+	background-color: #30b32d;
+}
+.legend1 span.yellow {
+	background-color: #fd0;
+}
+.legend1 span.orange {
+	background-color: #ffa500;
+}
+.legend1 span.red {
+	background-color: #f03e3e;
+}
 /* 
 
 @media screen and (min-width:761px) {

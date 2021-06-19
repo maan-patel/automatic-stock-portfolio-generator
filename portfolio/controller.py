@@ -164,21 +164,22 @@ def sentiment_score(stock_ticker):
     client = ExpertAiClient()
     sum = 0
     count = 0
-    for i in range(5):
-        text = data_for_comments[i]["details"]["userText"]
-        language= 'en'
+    text = ""
+    for i in range(3):
+        text += data_for_comments[i]["details"]["userText"]
+    print(text)
+    language= 'en'
         # print(text)
-        output = client.specific_resource_analysis(
-            body={"document": {"text": text}}, 
-            params={'language': language, 'resource': 'sentiment'
-        })
+    output = client.specific_resource_analysis(
+        body={"document": {"text": text}}, 
+        params={'language': language, 'resource': 'sentiment'
+    })
         # print(output.sentiment.overall)
         # print(text)
-        sum += output.sentiment.overall
-        count += 1
+    sum = output.sentiment.overall
     
-    average = 0.0
-    average = sum / count
+    # average = 0.0
+    average = sum 
     return average
 
 
@@ -200,9 +201,58 @@ def search_drop_down(search_query):
         result.append(f'{ticker.upper()} - {name}')
     return result
 
+def sentiment_for_news():
+    import requests
+
+    url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/news/v2/list"
+
+    querystring = {"region":"US","snippetCount":"28"}
+
+    payload = "Pass in the value of uuids field returned right in this endpoint to load the next page, or leave empty to load first page"
+    headers = {
+        'content-type': "text/plain",
+        'x-rapidapi-key': "3b5eefa820msha0498f1c4c42783p194c3cjsnb6c5e4bc24a3",
+        'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
+        }
+
+    response = requests.request("POST", url, data=payload, headers=headers, params=querystring)
+    data = response.json()["data"]
+
+
+    EAI_USERNAME = config('EAI_USERNAME')
+    EAI_PASSWORD = config('EAI_PASSWORD')
+    import os
+    os.environ["EAI_USERNAME"] = EAI_USERNAME
+    os.environ["EAI_PASSWORD"] = EAI_PASSWORD
+    
+    client = ExpertAiClient()
+    sum = 0
+    count = 0
+    text = ""
+    for i in range(10):
+        text += data["main"]["stream"][i]["content"]["title"]
+    # print(text)
+    language= 'en'
+        # print(text)
+    output = client.specific_resource_analysis(
+        body={"document": {"text": text}}, 
+        params={'language': language, 'resource': 'sentiment'
+    })
+        # print(output.sentiment.overall)
+        # print(text)
+    sum = output.sentiment.overall
+    
+    # average = 0.0
+    average = sum 
+    # print(average)
+    return average
+    
+
+
+
 
 # Testing for functions 
-# print(sentiment_score(data_for_comments))
+# print(sentiment_score("C"))
 
 # print(is_number_of_stocks('AAPL', 1000))
 
