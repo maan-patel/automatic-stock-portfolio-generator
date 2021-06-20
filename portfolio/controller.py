@@ -252,7 +252,7 @@ def sentiment_for_news():
 
 
 # Testing for functions 
-# print(sentiment_score("C"))
+print(sentiment_score("AAPL"))
 
 # print(is_number_of_stocks('AAPL', 1000))
 
