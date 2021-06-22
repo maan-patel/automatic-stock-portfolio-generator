@@ -974,7 +974,7 @@ nav.main-menu {
 /*Resize the wrap to see the search bar change!*/
 .wrap{
   width: 50%;
-  margin: 5px auto;
+  margin: 15px auto;
   padding: 20px;
   /* transform: translate(-50%, -50%); */
 }
