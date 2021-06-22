@@ -760,6 +760,7 @@ nav.main-menu {
   animation-delay: -2.5s;
 }
 
+
 .investingone {
   font-family: Futura, sans-serif;
   font-weight: 900;
@@ -934,3 +935,46 @@ nav.main-menu {
     min-width: 360px;
   }
 } */
+
+
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid green;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: black;
+}
+
+.searchTerm:focus{
+  color: black;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid green;
+  background: green;
+  text-align: center;
+  color: #fff; 
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 50%;
+  margin: 5px auto;
+  padding: 20px;
+  /* transform: translate(-50%, -50%); */
+}
