@@ -98,7 +98,7 @@ def recommended_tickers(stock_ticker):
     querystring_recommender = {"symbol": stock_ticker}
 
     headers_recommender = {
-        "x-rapidapi-key": "3b5eefa820msha0498f1c4c42783p194c3cjsnb6c5e4bc24a3",
+        "x-rapidapi-key": "1ef84c9bc0msh0ec5f4323cd2733p19e01fjsn40a6d4d91c6e",
         "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
     }
 
@@ -249,7 +249,7 @@ def sentiment_for_news(num: int=0):
     payload = "Pass in the value of uuids field returned right in this endpoint to load the next page, or leave empty to load first page"
     headers = {
         "content-type": "text/plain",
-        "x-rapidapi-key": "3b5eefa820msha0498f1c4c42783p194c3cjsnb6c5e4bc24a3",
+        "x-rapidapi-key": "1ef84c9bc0msh0ec5f4323cd2733p19e01fjsn40a6d4d91c6e",
         "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
     }
 
@@ -435,7 +435,7 @@ def recommended_stock_weight(stock_ticker):
     querystring_recommender = {"symbol": stock_ticker}
 
     headers_recommender = {
-        "x-rapidapi-key": "3b5eefa820msha0498f1c4c42783p194c3cjsnb6c5e4bc24a3",
+        "x-rapidapi-key": "1ef84c9bc0msh0ec5f4323cd2733p19e01fjsn40a6d4d91c6e",
         "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
     }
 
@@ -465,7 +465,7 @@ def is_valid_ticker(stock_ticker):
     querystring = {"region": "US", "symbols": stock_ticker}
 
     headers = {
-        "x-rapidapi-key": "3b5eefa820msha0498f1c4c42783p194c3cjsnb6c5e4bc24a3",
+        "x-rapidapi-key": "1ef84c9bc0msh0ec5f4323cd2733p19e01fjsn40a6d4d91c6e",
         "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
     }
 
