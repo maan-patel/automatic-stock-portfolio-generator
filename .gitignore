@@ -3,5 +3,7 @@
 .Procfile
 .API.py
 .runtime.txt
-.run.gunicorn
-.vscode
+.run.gunicorn.sh
+.vscode/
+__pycache__/
+.portfolio_visualizer.py
