@@ -53,7 +53,10 @@
 #     average = sum / count
 #     return average
 
-
+from yahoo_fin import news
+ 
+new = news.get_yf_rss("nflx")
+print(new)
 # print(sentiment_score(data_for_comments))
 
 

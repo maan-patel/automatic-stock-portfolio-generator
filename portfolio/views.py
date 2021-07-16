@@ -31,16 +31,16 @@ def portfolio_create_view(request, *args, **kwargs):
     tickers = recommended_tickers(obj.stock_name)
     prices = recommended_stock_weight(obj.stock_name)
     graph = number_for_graph(obj.graph_type)
-    sentiment_average = sentiment_score(obj.stock_name)
-    sentiment_news_average = sentiment_for_news()
+    # sentiment_average = sentiment_score(obj.stock_name)
+    # sentiment_news_average = sentiment_for_news()
     # print(graph)
     context = {
         'obj': obj,
         'tickers': tickers,
         'prices' : prices,
         'graph': graph,
-        'senti': sentiment_average,
-        'senti_news': sentiment_news_average
+        # 'senti': sentiment_average,
+        # 'senti_news': sentiment_news_average
     }
     # print(tickers)
     # print(obj.stock_name)

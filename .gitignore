@@ -8,3 +8,5 @@
 __pycache__/
 .portfolio_visualizer.py
 .candlestick.py
+.app.py
+.venv/Lib

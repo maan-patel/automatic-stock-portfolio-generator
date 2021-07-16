@@ -9,109 +9,328 @@
 <!--</form>-->
 
 <!--    {{ graph }}-->
+<!-- <div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {
+          "proName": "FOREXCOM:SPXUSD",
+          "title": "S&P 500"
+        },
+        {
+          "proName": "FOREXCOM:NSXUSD",
+          "title": "Nasdaq 100"
+        },
+        {
+          "proName": "FX_IDC:EURUSD",
+          "title": "EUR/USD"
+        },
+        {
+          "proName": "BITSTAMP:BTCUSD",
+          "title": "BTC/USD"
+        },
+        {
+          "description": "TSLA",
+          "proName": "NASDAQ:TSLA"
+        },
+        {
+          "description": "AAPL",
+          "proName": "NASDAQ:AAPL"
+        },
+        {
+          "description": "QQQ",
+          "proName": "NASDAQ:QQQ"
+        },
+        {
+          "description": "FB",
+          "proName": "NASDAQ:FB"
+        },
+        {
+          "description": "GOOG",
+          "proName": "NASDAQ:GOOG"
+        }
+      ],
+        "showSymbolLogo": true,
+          "colorTheme": "dark",
+            "isTransparent": false,
+              "displayMode": "adaptive",
+                "locale": "en"
+    }
+  </script>
+</div> -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
+   
+    
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <a class="navbar-brand" href="#"><p class="popout-intro">
+
+        <span>Portfolio Generator</span>
+  
+      
+      </p></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" style="font-size: 2em" href="/"
-            >Home</a
-          >
-
-          <a class="nav-item nav-link" style="font-size: 2em" href="/about"
-            >About</a
-          >
-          <a class="nav-item nav-link" style="font-size: 2em" href="/contact"
-            >Contact</a
-          >
-        </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Create Portfolio</a>
+              </li>
+              
+          </ul>
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Login</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Register</a>
+              </li>
+          </ul>
       </div>
-    </nav>
+  </nav>
 
-    <!-- header section end -->
-    <!-- banner section start -->
-    <div class="layout_padding banner_section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <h1 class="banner_taital">Earning Financial Freedom</h1>
-            <p class="browse_text">
-              Do you want to invest but troubled by the fact about which stocks to buy? Come to "Earning Financial Freedom" to get free portfolio recommendations.
-            </p>
-            <div class="banner_bt">
-              <button class="read_bt">Learn More</button>
-            </div>
-          </div>
-        </div>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-4">
+
+        <!-- <h1>Portfolio Generator</h1> -->
+        <h1>Get Started With Investing</h1>
+        <p>
+          We aim to plan financial freedom for those struggling through the pandemic and provide free information about getting started with the Stock Market.
+          <br><br>
+          Click below to get started!
+        </p>
+        
+        
+        <a class="btn btn-success btn-lg" href="/create_portfolio" role="button">Create Portfolio</a>
+      
+
+
       </div>
-    </div>
-    <!-- banner section end -->
-    <!-- search box start -->
-    <div class="container">
-      <div class="search_box">
-        <form action = '.' method = 'POST'> {% csrf_token %}
-        <div class="row">
-          {{ form.non_field_errors }}
-          <div class="col-sm-3">
-            <div class="form-group">
-              {{ form.stock_name.errors }}
-
-              {{ form.stock_name }}
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="form-group">
-              {{ form.investment_value.errors }}
-
-              {{ form.investment_value }}
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="form-group">
-              {{ form.risk_profile.errors }}
-
-              {{ form.risk_profile }}
-            </div>
-          </div>
-        </div>
-        <br />
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-5">
-              <div class="form-group">
-                {{ form.time.errors }}
-
-                {{ form.time }}
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="form-group">
-                {{ form.graph_type.errors }}
-
-                {{ form.graph_type }}
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="form-group">
-                <input class="search_bt" type="submit" value="Create Portfolio"></input>
-              </div>
-            </div>
-          </form>
-          </div>
-        </div>
+      <div class="col-8">
+        {% load static %}
+        <img src="{% static 'images/intro.svg' %}" alt="Image" class="img-fluid img-absolute">
       </div>
-    </div>
-    <!-- search box end -->
+    
+    
+      </div>
+  </div>
 
+  <center>
+    <form class="d-flex">
+      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+
+    <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener" target="_blank"><span class="blue-text">Financial Markets</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+  {
+  "width": 770,
+  "height": 450,
+  "symbolsGroups": [
+    {
+      "name": "Indices",
+      "originalName": "Indices",
+      "symbols": [
+        {
+          "name": "FOREXCOM:SPXUSD",
+          "displayName": "S&P 500"
+        },
+        {
+          "name": "FOREXCOM:NSXUSD",
+          "displayName": "Nasdaq 100"
+        },
+        {
+          "name": "FOREXCOM:DJI",
+          "displayName": "Dow 30"
+        },
+        {
+          "name": "INDEX:NKY",
+          "displayName": "Nikkei 225"
+        },
+        {
+          "name": "INDEX:DEU30",
+          "displayName": "DAX Index"
+        },
+        {
+          "name": "FOREXCOM:UKXGBP",
+          "displayName": "UK 100"
+        }
+      ]
+    },
+    {
+      "name": "Commodities",
+      "originalName": "Commodities",
+      "symbols": [
+        {
+          "name": "CME_MINI:ES1!",
+          "displayName": "S&P 500"
+        },
+        {
+          "name": "CME:6E1!",
+          "displayName": "Euro"
+        },
+        {
+          "name": "COMEX:GC1!",
+          "displayName": "Gold"
+        },
+        {
+          "name": "NYMEX:CL1!",
+          "displayName": "Crude Oil"
+        },
+        {
+          "name": "NYMEX:NG1!",
+          "displayName": "Natural Gas"
+        },
+        {
+          "name": "CBOT:ZC1!",
+          "displayName": "Corn"
+        }
+      ]
+    },
+    {
+      "name": "Bonds",
+      "originalName": "Bonds",
+      "symbols": [
+        {
+          "name": "CME:GE1!",
+          "displayName": "Eurodollar"
+        },
+        {
+          "name": "CBOT:ZB1!",
+          "displayName": "T-Bond"
+        },
+        {
+          "name": "CBOT:UB1!",
+          "displayName": "Ultra T-Bond"
+        },
+        {
+          "name": "EUREX:FGBL1!",
+          "displayName": "Euro Bund"
+        },
+        {
+          "name": "EUREX:FBTP1!",
+          "displayName": "Euro BTP"
+        },
+        {
+          "name": "EUREX:FGBM1!",
+          "displayName": "Euro BOBL"
+        }
+      ]
+    },
+    {
+      "name": "Forex",
+      "originalName": "Forex",
+      "symbols": [
+        {
+          "name": "FX:EURUSD"
+        },
+        {
+          "name": "FX:GBPUSD"
+        },
+        {
+          "name": "FX:USDJPY"
+        },
+        {
+          "name": "FX:USDCHF"
+        },
+        {
+          "name": "FX:AUDUSD"
+        },
+        {
+          "name": "FX:USDCAD"
+        }
+      ]
+    }
+  ],
+  "showSymbolLogo": true,
+  "colorTheme": "light",
+  "isTransparent": false,
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/stocks-usa/" rel="noopener" target="_blank"><span class="blue-text">Stock Market Today</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
+  {
+  "colorTheme": "light",
+  "dateRange": "12M",
+  "exchange": "US",
+  "showChart": true,
+  "locale": "en",
+  "largeChartUrl": "",
+  "isTransparent": false,
+  "showSymbolLogo": false,
+  "width": "400",
+  "height": "600",
+  "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+  "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+  "gridLineColor": "rgba(240, 243, 250, 0)",
+  "scaleFontColor": "rgba(120, 123, 134, 1)",
+  "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+  "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+  "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+  "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+  "symbolActiveColor": "rgba(41, 98, 255, 0.12)"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/forex-cross-rates/" rel="noopener" target="_blank"><span class="blue-text">Exchange Rates</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
+  {
+  "width": 770,
+  "height": 400,
+  "currencies": [
+    "EUR",
+    "USD",
+    "JPY",
+    "GBP",
+    "CHF",
+    "AUD",
+    "CAD",
+    "NZD",
+    "CNY"
+  ],
+  "isTransparent": false,
+  "colorTheme": "light",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text"> History</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+  {
+  "colorTheme": "light",
+  "isTransparent": false,
+  "displayMode": "regular",
+  "width": 480,
+  "height": 830,
+  "locale": "en"
+}
+  </script>
+</div>
+</center>
+<!-- TradingView Widget END -->
 
     {% endblock %}

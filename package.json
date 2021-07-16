@@ -1,0 +1,27 @@
+{
+  "name": "automatic-stock-portfolio-generator",
+  "version": "1.0.0",
+  "description": "used to help with some of the front-end functions",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.14.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maan-patel/automatic-stock-portfolio-generator.git"
+  },
+  "author": "Maan Patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maan-patel/automatic-stock-portfolio-generator/issues"
+  },
+  "homepage": "https://github.com/maan-patel/automatic-stock-portfolio-generator#readme"
+}

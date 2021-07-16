@@ -5,15 +5,12 @@
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
-@import url(animate.min.css);
+
 @import url(normalize.css);
-@import url(meanmenu.css);
 @import url(owl.carousel.min.css);
-@import url(swiper.min.css);
 @import url(slick.css);
 @import url(jquery.fancybox.min.css);
 @import url(jquery-ui.css);
-@import url(nice-select.css);
 
 
 
@@ -152,7 +149,7 @@ a {
 nav.main-menu {
   float: left;
   margin-left: 0;
-  padding-top: 40px;
+  padding-top: 10px;
 }
 
 .main-menu ul {
@@ -194,8 +191,8 @@ nav.main-menu {
 
 .navbar-light .navbar-nav .nav-link {
   color: #060608;
-  font-size: 16pt;
-  padding-top: 30px;
+  font-size: 20pt;
+  padding-top: 0px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -672,6 +669,50 @@ nav.main-menu {
   animation-delay: -2.5s;
 }
 
+
+
+.popout-intro {
+  font-family: Futura, sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  padding: 0px;
+}
+@keyframes ani {
+  0% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightgreen;
+    color: black;
+ }
+  30% {
+    transform: translate3d(0, 0, 0);
+    text-shadow: 0em 0em 0 lightgreen;
+    color: black;
+ }
+  70% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightgreen;
+    color: black;
+ }
+  100% {
+    transform: translate3d(0.08em, -0.08em, 0);
+    text-shadow: -0.08em 0.08em lightgreen;
+    color: black;
+ }
+}
+.popout-intro span {
+  position: relative;
+  display: inline-block;
+  animation: ani 5s infinite alternate cubic-bezier(0.86, 0, 0.07, 1);
+}
+.popout-intro span:nth-last-child(1n) {
+  animation-delay: -0.8333333333s;
+}
+.popout-intro span:nth-last-child(2n) {
+  animation-delay: -1.6666666667s;
+}
+.popout-intro span:nth-last-child(3n) {
+  animation-delay: -2.5s;
+}
 
 .popout1 {
   font-family: Futura, sans-serif;
