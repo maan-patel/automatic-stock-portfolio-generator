@@ -1,4 +1,4 @@
-# .env
+.env
 .fig.html
 .Procfile
 .API.py
@@ -10,5 +10,5 @@ __pycache__/
 .candlestick.py
 .app.py
 .venv/Lib
-.db.sqlite3
+db.sqlite3
 node_modules/
