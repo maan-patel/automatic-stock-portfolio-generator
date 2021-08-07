@@ -10,3 +10,5 @@ __pycache__/
 .candlestick.py
 .app.py
 .venv/Lib
+.db.sqlite3
+node_modules/

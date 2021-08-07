@@ -1,6 +1,10 @@
 # Automatic-Stock-Portfolio-Generator
-Creates a stock portfolio based on you risk level, period of investment, and investment value
 
+Please note that this repository does not contain official code due to security of users.
+
+# What is does
+
+Creates a stock portfolio based on you risk level, period of investment, and investment value.
 
 ## App Website: 
 https://automatic-stock-portfolio.herokuapp.com/
@@ -27,6 +31,3 @@ pip3 install -r requirements.txt
 python manage.py runserver
 ```
 
-
-## What it does
-My app gets input such as stock name, investment value, risk level, etc. to generate a stock portfolio. Furthermore, the app uses the Expert.ai API and yahoo-finance API to determine the sentiment of the general market and the specific stock. This will allow users to be more informed before investing

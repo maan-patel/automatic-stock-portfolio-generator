@@ -6,10 +6,10 @@ import os
 from functools import lru_cache, wraps
 
 #Init env
-# Take care of this boilerplate right upfront.
 #0. Do this only ONCE. decouple will cache this from the configs
 EAI_USERNAME = config("EAI_USERNAME")
 EAI_PASSWORD = config("EAI_PASSWORD")
+RAPI_NEWS_KEY3 = config("x-rapidapi-key3")
 RAPI_NEWS_KEY  = config("x-rapidapi-key")
 RAPI_NEWS_HOST = config("x-rapidapi-host")
 os.environ["EAI_USERNAME"] = EAI_USERNAME
@@ -20,7 +20,7 @@ TEXT_LIMIT=10000
 
 ### 1. Decorators to log errors -- currently to stdout, apply logging as needed
 def timefunc(func):
-    #print(f"In timefunc({func}, args = {args}, kwargs = {kwargs}).") 
+    
     ARGSZ_LIMIT = 10485760
     import pandas as pd
     import time
@@ -55,7 +55,7 @@ def timefunc(func):
         return result
     return wrapper
 
-# 2. Reuse this code!!! DRY: Don't Repeat Yourself!!! Tired of this biolerplate strewn all over the code
+# 2. Reuse this code!!! DRY: Don't Repeat Yourself!!! 
 @timefunc
 def expert_api_client():
     return ExpertAiClient()
@@ -86,8 +86,6 @@ def eai_api_call(text: str, client = None, lang: str = 'en', resource: str = 'se
 def get_ts():
     return dt.datetime.today().strftime('%Y%m%d_%H%M%S')
 
-
-#Refactored: don't know if this function is even being used.
 # @timefunc
 def recommended_tickers(stock_ticker):
     """ Refactored: DRY! """
@@ -98,8 +96,8 @@ def recommended_tickers(stock_ticker):
     querystring_recommender = {"symbol": stock_ticker}
 
     headers_recommender = {
-        "x-rapidapi-key": "1ef84c9bc0msh0ec5f4323cd2733p19e01fjsn40a6d4d91c6e",
-        "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+        'x-rapidapi-key' : RAPI_NEWS_KEY3,
+        'x-rapidapi-host': RAPI_NEWS_HOST
     }
 
     response_recommender = requests.request(
@@ -150,7 +148,6 @@ def search_drop_down(search_query):
 
 # Finally, a function and API that really works! Caches all results. Add code to reuse this cache
 # if you like. The file generated can even be uploaded to Mongo/Redis to serve news.
-# And DO NOT forget to remove my API keys!!!
 @lru_cache(maxsize=256, typed=True)
 @timefunc
 def sentiment_for_news2(symbols: set, output_file: str = None, summary_file: str = 'sentilent.log') -> list:
@@ -249,8 +246,8 @@ def sentiment_for_news(num: int=0):
     payload = "Pass in the value of uuids field returned right in this endpoint to load the next page, or leave empty to load first page"
     headers = {
         "content-type": "text/plain",
-        "x-rapidapi-key": "1ef84c9bc0msh0ec5f4323cd2733p19e01fjsn40a6d4d91c6e",
-        "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+        'x-rapidapi-key' : RAPI_NEWS_KEY3,
+        'x-rapidapi-host': RAPI_NEWS_HOST
     }
 
     response = requests.request(
@@ -317,14 +314,10 @@ def get_sentiment_scores(news: dict):
         print(f"Text = '''{NL}{text}{NL}'''")
         print(f"Calculating news sentiment for ticker {ticker}:{NL}text = '''{NL}{text}{NL}''' . . .")
         language = "en"
-        # print(text)
-        #output = client.specific_resource_analysis(
-        #    body={"document": {"text": text}},
-        #    params={"language": language, "resource": "sentiment"},
-        #)
+
         output = eai_api_call(text, client=client)
         scores[ticker] = output.sentiment.overall
-        #text = ""
+
     print("scores:", scores)
     return scores
 
@@ -353,8 +346,8 @@ def recommended_stock_weight(stock_ticker):
     querystring_recommender = {"symbol": stock_ticker}
 
     headers_recommender = {
-        "x-rapidapi-key": "1ef84c9bc0msh0ec5f4323cd2733p19e01fjsn40a6d4d91c6e",
-        "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+        'x-rapidapi-key' : RAPI_NEWS_KEY3,
+        'x-rapidapi-host': RAPI_NEWS_HOST
     }
 
     response_recommender = requests.request(
@@ -383,8 +376,8 @@ def is_valid_ticker(stock_ticker):
     querystring = {"region": "US", "symbols": stock_ticker}
 
     headers = {
-        "x-rapidapi-key": "1ef84c9bc0msh0ec5f4323cd2733p19e01fjsn40a6d4d91c6e",
-        "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+        'x-rapidapi-key' : RAPI_NEWS_KEY3,
+        'x-rapidapi-host': RAPI_NEWS_HOST
     }
 
     response = requests.request("GET", url, headers=headers, params=querystring)
@@ -437,8 +430,4 @@ def number_for_graph(graph):
         if graph.lower() == val.lower():
             return i + 1
     return 1
-
-# if __name__ == 'main':
-#     graph()
-#     portfolio_vis()
 
