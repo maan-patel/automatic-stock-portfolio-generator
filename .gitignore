@@ -6,7 +6,7 @@ runtime.txt
 run.gunicorn.sh
 .vscode/
 __pycache__/
-.portfolio_visualizer.py
+portfolio_visualizer.py
 .candlestick.py
 .app.py
 .venv/Lib
