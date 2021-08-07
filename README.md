@@ -2,7 +2,7 @@
 
 Please note that this repository does not contain official code due to security of users.
 
-# What is does
+## What it does
 
 Creates a stock portfolio based on you risk level, period of investment, and investment value.
 
