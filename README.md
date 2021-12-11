@@ -1,14 +1,12 @@
 # Automatic-Stock-Portfolio-Generator
 
-Please note that this repository does not contain official code due to security of users.
+Please note that this repository is early prototype of the official website:
+
+https://automatic-stock-portfolio.herokuapp.com/
 
 ## What it does
 
 Creates a stock portfolio based on you risk level, period of investment, and investment value.
-
-## App Website: 
-https://automatic-stock-portfolio.herokuapp.com/
-
 
 ## To Run Locally
 
