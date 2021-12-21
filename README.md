@@ -4,6 +4,8 @@ Please note that this repository is an early prototype of the official website:
 
 https://automatic-stock-portfolio.herokuapp.com/
 
+It does not contain production code due to security of users. 
+
 ## What it does
 
 Creates a stock portfolio based on you risk level, period of investment, and investment value.
