@@ -2,7 +2,7 @@
 
 ## Please note that this repository is an early prototype of the official website:
 
-https://automatic-stock-portfolio.herokuapp.com/
+https://port-gen.herokuapp.com/
 
 It does not contain production code due to security of users. 
 
