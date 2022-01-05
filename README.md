@@ -1,6 +1,6 @@
 # Automatic-Stock-Portfolio-Generator
 
-Please note that this repository is an early prototype of the official website:
+## Please note that this repository is an early prototype of the official website:
 
 https://automatic-stock-portfolio.herokuapp.com/
 
