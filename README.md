@@ -1,10 +1,8 @@
 # Automatic-Stock-Portfolio-Generator
 
-## Please note that this repository is an early prototype of the official website:
+## Please note that this repository is an early prototype of the official website and it does not contain production code due to security of users:
 
 https://port-gen.herokuapp.com/
-
-It does not contain production code due to security of users. 
 
 ## What it does
 
